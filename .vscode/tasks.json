@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run NoteBridge (Backend + Frontend)",
+      "type": "shell",
+      "command": ".\\run.bat",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run FastAPI Backend Only",
+      "type": "shell",
+      "command": "cd backend; ..\\notebridge-frontend\\venv\\Scripts\\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run React Frontend Only",
+      "type": "shell",
+      "command": "cd notebridge-frontend; npm run dev",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
